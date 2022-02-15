@@ -17,6 +17,7 @@
 
 <script>
 import User from "./User";
+import axios from 'axios'
 
 export default {
   name: "Users",
@@ -31,5 +32,8 @@ export default {
       users: [],
     };
   },
+  created(){
+      axios.get('/api/users').then(response => this.users = response.data)
+  }
 };
 </script>
