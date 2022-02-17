@@ -1,8 +1,8 @@
 <template>
 <tr>
-    <td>{{ user.firstname }}</td>
-    <td>{{ user.lastname }}</td>
-    <td>{{ user.married }}</td>
+    <td>{{ user.first_name }}</td>
+    <td>{{ user.last_name }}</td>
+    <td>{{ user.is_married ? 'Yes' : 'No' }}</td>
     </tr>
 </template>
 

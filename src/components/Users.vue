@@ -8,7 +8,7 @@
           <th class="text-left">Married ?</th>
         </tr>
       </thead>
-      <tbody v-for="user in users" :key="user.firstname">
+      <tbody v-for="user in users" :key="user.id">
           <User :user="user" />
       </tbody>
     </template>
@@ -17,6 +17,7 @@
 
 <script>
 import User from "./User";
+import axios from 'axios'
 
 export default {
   name: "Users",
@@ -31,5 +32,8 @@ export default {
       users: [],
     };
   },
+  created(){
+      axios.get('/api/users').then(response => this.users = response.data)
+  }
 };
 </script>

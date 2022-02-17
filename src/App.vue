@@ -1,5 +1,5 @@
 <template>
-<v-app>
+<v-app class="app">
   <CreateUser @create-new-user="createNewUser" />
   <Users :users="users" />
 </v-app>
@@ -27,3 +27,10 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+.app{
+    width: 300px;
+    margin-left: 40px;
+}
+</style>
