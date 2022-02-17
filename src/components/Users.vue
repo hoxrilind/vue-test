@@ -8,7 +8,7 @@
           <th class="text-left">Married ?</th>
         </tr>
       </thead>
-      <tbody v-for="user in users" :key="user.firstname">
+      <tbody v-for="user in users" :key="user.id">
           <User :user="user" />
       </tbody>
     </template>
