@@ -2,14 +2,14 @@
   <v-simple-table>
     <template v-slot:default>
       <thead>
-        <tr>
-          <th class="text-left">Firstname</th>
-          <th class="text-left">Lastname</th>
-          <th class="text-left">Married ?</th>
+        <tr class="text-left">
+          <th v-for="tableData in formConfig.fields" :key="tableData.label">
+            {{ tableData.label }}
+          </th>
         </tr>
       </thead>
       <tbody v-for="user in users" :key="user.id">
-          <User :user="user" />
+        <User :user="user" />
       </tbody>
     </template>
   </v-simple-table>
@@ -17,7 +17,7 @@
 
 <script>
 import User from "./User";
-import axios from 'axios'
+import axios from "axios";
 
 export default {
   name: "Users",
@@ -29,11 +29,13 @@ export default {
   },
   data() {
     return {
-      users: [],
+      formConfig: [],
     };
   },
-  created(){
-      axios.get('/api/users').then(response => this.users = response.data)
-  }
+  created() {
+    axios.get("/api/createUser/uiconfig").then((response) => {
+      this.formConfig = response.data;
+    });
+  },
 };
 </script>

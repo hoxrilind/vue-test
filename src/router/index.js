@@ -1,19 +1,31 @@
-import Vue from 'vue'
-import VueRouter from 'vue-router'
-import CreateUser from '../components/CreateUser'
+import Vue from "vue";
+import VueRouter from "vue-router";
+import Home from "../views/Home";
+import CreateUser from "../views/CreateUser";
+import Table from "../views/Table";
 
-Vue.use(VueRouter)
+Vue.use(VueRouter);
 
 const routes = [
   {
-  path: '/create/user',
-  component: CreateUser,
-  name: 'create_user'
-}]
-
+    path: "/",
+    component: Home,
+    name: "Home",
+  },
+  {
+    path: "/createuser",
+    component: CreateUser,
+    name: "CreateUser",
+  },
+  {
+    path: "/users",
+    component: Table,
+    name: "Table",
+  },
+];
 
 const router = new VueRouter({
-  routes
-})
+  routes,
+});
 
-export default router
+export default router;

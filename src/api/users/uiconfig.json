@@ -1,0 +1,10 @@
+{
+    "type": "table",
+    "fetchApi": "/userData",
+    "headers": [
+        "first name",
+        "last name",
+        "full name",
+        "phone number"
+    ]
+}

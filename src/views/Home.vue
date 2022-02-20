@@ -1,13 +1,3 @@
 <template>
-  <hello-world />
+    <h1>Welcome</h1>
 </template>
-
-<script>
-
-  export default {
-    name: 'Home',
-
-    components: {
-    },
-  }
-</script>

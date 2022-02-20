@@ -1,36 +1,20 @@
 <template>
 <v-app class="app">
-  <CreateUser @create-new-user="createNewUser" />
-  <Users :users="users" />
+    <router-view/>
 </v-app>
 </template>
 
 <script>
-import CreateUser from "../src/components/CreateUser";
-import Users from "../src/components/Users";
+
 
 export default {
   name: "App",
-  components: {
-    CreateUser,
-    Users,
-  },
-  data() {
-    return {
-      users: [],
-    };
-  },
-  methods: {
-    createNewUser(user) {
-      this.users = [...this.users, user]
-    },
-  },
 };
 </script>
 
 <style scoped>
 .app{
-    width: 300px;
+    width: 400px;
     margin-left: 40px;
 }
 </style>
