@@ -1,0 +1,23 @@
+{
+    "Type": "form",
+    "submitApi": "/user/create",
+    "onSuccess": "user is created successfully",
+    "onError": "something went wrong",
+    "fields": [
+        {
+            "Type": "text",
+            "label": "first name",
+            "name": "first_name"
+        },
+        {
+            "Type": "text",
+            "label": "last name",
+            "name": "last_name"
+        },
+        {
+            "Type": "checkbox",
+            "label": "married ?",
+            "name": "is_married"
+        }
+    ]
+}

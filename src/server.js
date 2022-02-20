@@ -1,5 +1,7 @@
 import { Server, Model } from "miragejs";
-import usersJson from '../src/api/create_users.json';
+import usersUiConfig from './api/users/uiconfig.json';
+import userdata from './api/users/userdata.json';
+import formUiConfig from './api/createUser/uiconfig.json'
 
 new Server({
     models: {
@@ -11,14 +13,17 @@ new Server({
       });
     },
     routes() {
-    //   this.urlPrefix = 'http://localhost:9000';
       this.namespace = "api";
-      this.get("/users", (schema) => {
-        return schema.db.users;
+      this.get("/users/uiconfig", () => {
+        return usersUiConfig
+      });
+      this.get("/users/userdata", () => {
+        return userdata
+      });
+      this.get("/createUser/uiconfig", () => {
+        return formUiConfig
       });
       
-    //   this.passthrough()
-
       this.post("/user/create", (schema, request) => {
         const user = JSON.parse(request.requestBody).data;
         return schema.db.users.insert(user);
